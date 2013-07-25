@@ -1,0 +1,14 @@
+#!/bin/sh
+
+#Check argument number
+EXPECTED_ARGS=2
+E_BADARGS=65
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo "Usage: `basename $0` IP_address filename"
+  exit $E_BADARGS
+fi
+
+echo "put "$2 " " $2  | ftp $1
+
